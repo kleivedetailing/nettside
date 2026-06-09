@@ -1510,7 +1510,7 @@
           <div class="field-grid">
             <label>
               <span class="field-label">Navn <span class="req" aria-hidden="true">*</span></span>
-              <input type="text" name="navn" placeholder="Ditt navn" required>
+              <input type="text" name="name" placeholder="Ditt navn" required>
             </label>
             <label>
               <span class="field-label">Telefon <span class="req" aria-hidden="true">*</span></span>
@@ -1520,7 +1520,7 @@
           <div class="field-grid">
             <label>
               <span class="field-label">E-post <span class="req" aria-hidden="true">*</span></span>
-              <input type="email" name="epost" placeholder="Din e-post" required>
+              <input type="email" name="email" placeholder="Din e-post" required>
             </label>
             <label>
               <span class="field-label">Bilmodell <span class="req" aria-hidden="true">*</span></span>
@@ -1638,14 +1638,14 @@
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({
-            Navn: data.navn || "",
+            Navn: data.name || "",
             Telefon: data.telefon || "",
-            "E-post": data.epost || "",
+            "E-post": data.email || "",
             Bilmodell: data.bilmodell || "",
             Tjeneste: data.tjeneste || "",
             Melding: data.melding || "",
-            _subject: "Ny forespørsel fra Kleive Detailing-nettsiden",
-            _replyto: data.epost || "",
+            _subject: "Ny booking fra " + (data.name || "nettsiden"),
+            _replyto: data.email || "",
             _template: "table"
           })
         });
