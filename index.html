@@ -50,17 +50,17 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: opacity, transform;
     }
 
     .reveal.reveal-left {
-      transform: translateX(-44px);
+      transform: translateX(-28px);
     }
 
     .reveal.reveal-right {
-      transform: translateX(44px);
+      transform: translateX(28px);
     }
 
     .reveal.is-in {
@@ -1078,9 +1078,9 @@
 
     @keyframes galFade {
       0% { opacity: 0; }
-      6% { opacity: 1; }
-      44% { opacity: 1; }
-      50% { opacity: 0; }
+      8% { opacity: 1; }
+      50% { opacity: 1; }
+      58% { opacity: 0; }
       100% { opacity: 0; }
     }
 
@@ -1317,7 +1317,7 @@
           <strong>Book på telefon eller e-post</strong>
           <p>Fortell hvor bilen står, hvilken pakke du ønsker og litt om tilstanden. Vi svarer raskt med tidspunkt og pris.</p>
           <a class="btn btn-light" href="tel:+4748350490">Ring 483 50 490</a>
-          <p class="quick-note">24/7 · fleksibel booking</p>
+          <p class="quick-note">Svar samme dag · Fleksibel booking</p>
         </aside>
       </div>
     </section>
@@ -1754,7 +1754,7 @@
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+      }, { threshold: 0.08, rootMargin: "0px" });
 
       targets.forEach((el) => io.observe(el));
     })();
