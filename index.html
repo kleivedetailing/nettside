@@ -1533,18 +1533,35 @@
             </label>
           </div>
           <label>
-            <span class="field-label">Hovedtjeneste <span class="req" aria-hidden="true">*</span></span>
-            <select name="tjeneste" required>
-              <option value="">Velg tjeneste</option>
-              <option>Refresh</option>
-              <option>Restore</option>
-              <option>Full Detail</option>
-              <option>Usikker, ønsker anbefaling</option>
-            </select>
+            <span class="field-label">Adresse der bilen står <span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="adresse" placeholder="Gateadresse og sted" required>
           </label>
+          <div class="field-grid">
+            <label>
+              <span class="field-label">Vann og strøm der bilen står? <span class="req" aria-hidden="true">*</span></span>
+              <select name="vann_strom" required>
+                <option value="">Velg</option>
+                <option>Ja, begge deler</option>
+                <option>Kun vann</option>
+                <option>Kun strøm</option>
+                <option>Nei</option>
+                <option>Usikker</option>
+              </select>
+            </label>
+            <label>
+              <span class="field-label">Hovedtjeneste <span class="req" aria-hidden="true">*</span></span>
+              <select name="tjeneste" required>
+                <option value="">Velg tjeneste</option>
+                <option>Refresh</option>
+                <option>Restore</option>
+                <option>Full Detail</option>
+                <option>Usikker, ønsker anbefaling</option>
+              </select>
+            </label>
+          </div>
           <label>
             <span class="field-label">Melding</span>
-            <textarea name="melding" placeholder="Fortell oss gjerne mer om hva du trenger..."></textarea>
+            <textarea name="melding" placeholder="Fortell oss gjerne mer – f.eks. bilens tilstand, og hvilke dager eller tidspunkt som passer deg best..."></textarea>
           </label>
           <button class="btn btn-primary" type="submit">Send tilbudsforespørsel</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
@@ -1647,6 +1664,8 @@
             Telefon: data.telefon || "",
             "E-post": data.email || "",
             Bilmodell: data.bilmodell || "",
+            Adresse: data.adresse || "",
+            "Vann og strøm": data.vann_strom || "",
             Tjeneste: data.tjeneste || "",
             Melding: data.melding || "",
             _subject: "Ny booking fra " + (data.name || "nettsiden"),
