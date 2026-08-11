@@ -278,6 +278,18 @@
       background: rgba(255, 255, 255, 0.11);
     }
 
+    .btn-gold {
+      color: var(--text);
+      border-color: rgba(231, 194, 90, 0.7);
+      background: rgba(231, 194, 90, 0.08);
+      box-shadow: 0 0 14px rgba(193, 150, 51, 0.18);
+    }
+
+    .btn-gold:hover {
+      border-color: rgba(246, 218, 140, 0.95);
+      background: rgba(231, 194, 90, 0.15);
+    }
+
     .btn-light {
       color: var(--bg);
       background: var(--text);
@@ -480,7 +492,7 @@
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
     }
 
@@ -574,11 +586,16 @@
       letter-spacing: -0.04em;
     }
 
-    .price span {
+    .price-note {
+      margin: 0.85rem 0 0;
       color: var(--muted);
       font-size: 0.9rem;
       font-weight: 600;
-      letter-spacing: 0;
+      text-align: right;
+    }
+
+    .service-grid .service-card > p {
+      min-height: 4.8em;
     }
 
     .service-card p {
@@ -612,6 +629,13 @@
         linear-gradient(var(--blue), var(--blue)) center / 8px 2px no-repeat,
         linear-gradient(var(--blue), var(--blue)) center / 2px 8px no-repeat,
         rgba(35, 92, 255, 0.14);
+    }
+
+    .service-card.premium .check-list li::before {
+      background:
+        linear-gradient(#e7c25a, #e7c25a) center / 8px 2px no-repeat,
+        linear-gradient(#e7c25a, #e7c25a) center / 2px 8px no-repeat,
+        rgba(231, 194, 90, 0.14);
     }
 
     .service-card .btn {
@@ -1193,7 +1217,11 @@
       }
 
       .service-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-grid .service-card > p {
+        min-height: 0;
       }
 
       .process-grid {
@@ -1208,6 +1236,10 @@
     @media (max-width: 640px) {
       .container {
         width: min(100% - 28px, var(--max));
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
       }
 
       .nav {
@@ -1336,7 +1368,7 @@
           <article class="service-card">
             <span class="service-tag">Utvendig</span>
             <h3>Refresh</h3>
-            <div class="price">fra 790,- <span>/ bil</span></div>
+            <div class="price">fra 990,-</div>
             <p>For hverdagsbilen som trenger en kjapp oppfriskning utvendig.</p>
             <ul class="check-list">
               <li>Skånsom håndvask</li>
@@ -1347,24 +1379,35 @@
             <a class="btn btn-secondary" href="#kontakt">Bestill Refresh</a>
           </article>
 
+          <article class="service-card">
+            <span class="service-tag">Innvendig</span>
+            <h3>Revive</h3>
+            <div class="price">fra 1 990,-</div>
+            <p>For deg som vil ha et rent og friskt interiør.</p>
+            <ul class="check-list">
+              <li>Grundig støvsuging av interiør</li>
+              <li>Rens av matter, plast og detaljer</li>
+              <li>Vindusvask innvendig</li>
+            </ul>
+            <a class="btn btn-secondary" href="#kontakt">Bestill Revive</a>
+          </article>
+
           <article class="service-card featured">
             <span class="service-tag tag-blue">Mest valgt</span>
             <h3>Restore</h3>
-            <div class="price">fra 2 190,- <span>/ bil</span></div>
-            <p>For deg som vil ha en skikkelig ren bil, både inni og ute.</p>
+            <div class="price">fra 2 790,-</div>
+            <p>For deg som vil ha en skikkelig ren bil, både innvendig og utvendig.</p>
             <ul class="check-list">
               <li>Alt i Refresh</li>
-              <li>Grundig støvsuging av interiør</li>
-              <li>Rens av matter, plast og detaljer</li>
-              <li>Vinduer innvendig og utvendig</li>
+              <li>Alt i Revive</li>
             </ul>
             <a class="btn btn-primary" href="#kontakt">Bestill Restore</a>
           </article>
 
-          <article class="service-card">
+          <article class="service-card premium">
             <span class="service-tag tag-gold"><span class="tag-text">Premium</span></span>
             <h3>Full Detail</h3>
-            <div class="price">fra 3 290,- <span>/ bil</span></div>
+            <div class="price">fra 3 990,-</div>
             <p>For deg som vil ha maksimal finish – ned til minste detalj.</p>
             <ul class="check-list">
               <li>Alt i Restore</li>
@@ -1373,9 +1416,10 @@
               <li>Dekkvoks</li>
               <li>Lakkrens og keramisk sprayforsegling</li>
             </ul>
-            <a class="btn btn-secondary" href="#kontakt">Be om pris</a>
+            <a class="btn btn-gold" href="#kontakt">Bestill Full Detail</a>
           </article>
         </div>
+        <p class="price-note">Alle priser er per bil, inkl. mva.</p>
       </div>
     </section>
 
@@ -1553,6 +1597,7 @@
               <select name="tjeneste" required>
                 <option value="">Velg tjeneste</option>
                 <option>Refresh</option>
+                <option>Revive</option>
                 <option>Restore</option>
                 <option>Full Detail</option>
                 <option>Usikker, ønsker anbefaling</option>
