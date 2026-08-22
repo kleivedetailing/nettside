@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kleive Detailing | Mobil bilpleie</title>
-  <meta name="description" content="Mobil bilpleie med lidenskap for detaljer. Vi kommer til deg i Evenes, Harstad, Narvik og omegn – vask, interiørrens og detailing. Ring 483 50 490 for booking.">
+  <title>Bilvask Harstad og Narvik – mobil bilpleie | Kleive Detailing</title>
+  <meta name="description" content="Mobil bilvask og bilpleie – vi kommer til deg i Harstad, Narvik, Evenes og omegn. Utvendig vask, interiørrens og detailing. Ring 483 50 490 for booking.">
   <meta name="theme-color" content="#06080b">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta property="og:title" content="Kleive Detailing | Mobil bilpleie">
-  <meta property="og:description" content="Mobil bilpleie med lidenskap for detaljer. Vi kommer til deg i Evenes, Harstad, Narvik og omegn – vask, interiørrens og detailing. Ring 483 50 490 for booking.">
+  <link rel="canonical" href="https://kleivedetailing.no/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kleivedetailing.no/">
+  <meta property="og:site_name" content="Kleive Detailing">
+  <meta property="og:locale" content="nb_NO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Bilvask Harstad og Narvik – mobil bilpleie | Kleive Detailing">
+  <meta property="og:description" content="Mobil bilvask og bilpleie – vi kommer til deg i Harstad, Narvik, Evenes og omegn. Utvendig vask, interiørrens og detailing. Ring 483 50 490 for booking.">
   <meta property="og:image" content="hero-car.jpg">
   <style>
     :root {
@@ -404,25 +410,23 @@
       backdrop-filter: blur(18px);
     }
 
+    .quick-card strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+
     .quick-card p {
-      margin: 0 0 0.85rem;
+      margin: 0 0 1.1rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .quick-card strong {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-size: 1.1rem;
-    }
-
-    .quick-card .quick-note {
-      margin: 0.8rem 0 0;
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-align: center;
+    .quick-card .btn {
+      width: 100%;
+      min-height: 52px;
+      font-size: 1.05rem;
     }
 
     .quick-grid {
@@ -718,36 +722,6 @@
       font-size: 0.92rem;
     }
 
-    .hint {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.55rem;
-      margin: 1.2rem 0 0;
-      color: var(--muted);
-      font-size: 0.8rem;
-      line-height: 1.45;
-    }
-
-    .hint-mark {
-      flex: none;
-      display: grid;
-      place-items: center;
-      width: 17px;
-      height: 17px;
-      margin-top: 0.08rem;
-      border-radius: 50%;
-      border: 1px solid rgba(107, 140, 255, 0.6);
-      color: var(--blue-soft);
-      font-size: 0.64rem;
-      font-weight: 900;
-      font-style: normal;
-    }
-
-    .hint b {
-      color: rgba(255, 255, 255, 0.82);
-      font-weight: 700;
-    }
-
     .process {
       background: var(--bg);
     }
@@ -816,6 +790,147 @@
       background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.74));
       color: var(--text);
       font-weight: 850;
+    }
+
+    .reviews {
+      background: var(--bg);
+    }
+
+    .reviews-rating {
+      display: grid;
+      justify-items: start;
+      gap: 0.5rem;
+    }
+
+    .reviews-rating .review-stars {
+      font-size: 1.15rem;
+    }
+
+    .reviews-rating p {
+      margin: 0;
+    }
+
+    .reviews-nav {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    .reviews-arrow {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 50%;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    }
+
+    .reviews-arrow:hover {
+      border-color: rgba(107, 140, 255, 0.6);
+      background: rgba(255, 255, 255, 0.11);
+      transform: translateY(-1px);
+    }
+
+    .reviews-arrow svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    .reviews-track-wrap {
+      position: relative;
+    }
+
+    .reviews-track-wrap::before,
+    .reviews-track-wrap::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      width: clamp(24px, 6vw, 90px);
+      pointer-events: none;
+    }
+
+    .reviews-track-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg), transparent);
+    }
+
+    .reviews-track-wrap::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--bg), transparent);
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .reviews-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      flex: 0 0 min(340px, 80vw);
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+    }
+
+    .review-stars {
+      color: #e7c25a;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+    }
+
+    .review-text {
+      flex: 1;
+      margin: 0.8rem 0 1.2rem;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.95rem;
+    }
+
+    .review-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0;
+    }
+
+    .review-avatar {
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(107, 140, 255, 0.45);
+      border-radius: 50%;
+      color: var(--blue-soft);
+      background: rgba(35, 92, 255, 0.16);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .review-meta b {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .review-meta small {
+      color: var(--muted);
+      font-size: 0.75rem;
     }
 
     .contact {
@@ -1224,6 +1339,10 @@
         min-height: 0;
       }
 
+      .price-note {
+        text-align: left;
+      }
+
       .process-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1304,7 +1423,7 @@
   <header class="site-header" id="siteHeader">
     <nav class="container nav" aria-label="Hovedmeny">
       <a class="brand" href="#hjem" aria-label="Kleive Detailing hjem">
-        <img class="brand-logo" src="logo.png" alt="Kleive Detailing – mobil bilpleie" decoding="async"
+        <img class="brand-logo" src="logo.png" alt="Kleive Detailing – mobil bilvask og bilpleie i Harstad og Narvik" decoding="async"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
         <span class="brand-text" style="display:none;">
           <strong>Kleive Detailing</strong>
@@ -1345,11 +1464,10 @@
           </div>
         </div>
 
-        <aside class="quick-card" aria-label="Rask informasjon">
-          <strong>Book på telefon eller e-post</strong>
+        <aside class="quick-card" aria-label="Kontakt">
+          <strong>Ring eller send SMS</strong>
           <p>Fortell hvor bilen står, hvilken pakke du ønsker og litt om tilstanden. Vi svarer raskt med tidspunkt og pris.</p>
           <a class="btn btn-light" href="tel:+4748350490">Ring 483 50 490</a>
-          <p class="quick-note">Svar samme dag · Fleksibel booking</p>
         </aside>
       </div>
     </section>
@@ -1361,7 +1479,6 @@
             <p class="section-kicker">Tjenester</p>
             <h2 class="section-title">Velg pakken som passer bilen.</h2>
           </div>
-          <p class="section-copy">Alle pakker utføres mobilt. Endelig pris kan variere med størrelse på bil, grad av smuss og ønsket nivå.</p>
         </div>
 
         <div class="service-grid">
@@ -1419,14 +1536,14 @@
             <a class="btn btn-gold" href="#kontakt">Bestill Full Detail</a>
           </article>
         </div>
-        <p class="price-note">Alle priser er per bil, inkl. mva.</p>
+        <p class="price-note">Alle priser er per bil, inkl.&nbsp;mva. Endelig pris kan variere med størrelse på bil, grad av smuss og ønsket nivå.</p>
       </div>
     </section>
 
     <section class="showcase" id="mobil">
       <div class="container showcase-grid">
         <div class="showcase-photo">
-          <img src="showcase.jpg" alt="Rengjort cockpit og dashbord med blå detaljer etter innvendig vask" loading="lazy" decoding="async">
+          <img src="showcase.jpg" alt="Rengjort cockpit og dashbord etter innvendig bilvask" loading="lazy" decoding="async">
         </div>
         <div class="showcase-content">
           <p class="section-kicker">Mobil service</p>
@@ -1443,10 +1560,9 @@
             </li>
             <li>
               <b>Vann og strøm på stedet</b>
-              <span>Jeg trenger tilgang til vann og strøm der bilen vaskes – for eksempel utekran og stikkontakt.</span>
+              <span>Vi kobler oss på utekran og stikkontakt der bilen står. Mangler du det, ta kontakt – så finner vi en løsning.</span>
             </li>
           </ul>
-          <p class="hint"><span class="hint-mark" aria-hidden="true">i</span> <span><b>Merk:</b> Tjenesten krever foreløpig tilgang til vann og strøm hos kunde. Ta kontakt, så finner vi en løsning.</span></p>
         </div>
       </div>
     </section>
@@ -1455,7 +1571,7 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Slik fungerer det</p>
+            <p class="section-kicker">Slik fungerer mobil bilvask</p>
             <h2 class="section-title">Fire enkle steg fra melding til blank bil.</h2>
           </div>
         </div>
@@ -1492,27 +1608,119 @@
 
         <div class="gallery-grid">
           <figure class="gallery-item rotate">
-            <img class="rot-img" src="interior-b.jpg" alt="Interiør og midtkonsoll før rens" loading="lazy" decoding="async">
-            <img class="rot-img" src="interior-a.jpg" alt="Rent interiør og midtkonsoll etter rens" loading="lazy" decoding="async">
+            <img class="rot-img" src="interior-b.jpg" alt="Interiør og midtkonsoll før innvendig rens" loading="lazy" decoding="async">
+            <img class="rot-img" src="interior-a.jpg" alt="Rent interiør og midtkonsoll etter innvendig bilvask" loading="lazy" decoding="async">
             <figcaption class="gallery-caption">Interiørvask og matter</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="headlight-detail.jpg" alt="Nærbilde av ren frontlykt på blå bil" loading="lazy" decoding="async">
+            <img src="headlight-detail.jpg" alt="Nærbilde av ren frontlykt etter bilpleie og detailing" loading="lazy" decoding="async">
             <figcaption class="gallery-caption">Rene frontlykter</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="wheel-detail.jpg" alt="Ren sort felg og dekk på blå bil" loading="lazy" decoding="async">
+            <img src="wheel-detail.jpg" alt="Ren felg og dekk etter bilvask med felgrens" loading="lazy" decoding="async">
             <figcaption class="gallery-caption">Felg og dekk</figcaption>
           </figure>
           <figure class="gallery-item rotate">
-            <img class="rot-img" src="golf-before.jpg" alt="Skitten grå bil før vask" loading="lazy" decoding="async">
-            <img class="rot-img" src="golf-after.jpg" alt="Skinnende ren grå bil etter vask" loading="lazy" decoding="async">
+            <img class="rot-img" src="golf-before.jpg" alt="Skitten grå bil før bilvask" loading="lazy" decoding="async">
+            <img class="rot-img" src="golf-after.jpg" alt="Skinnende ren grå bil etter mobil bilvask i Harstad" loading="lazy" decoding="async">
             <figcaption class="gallery-caption">Før og etter</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="cabin-detail.jpg" alt="Rengjort midtkonsoll og dashbord i Range Rover" loading="lazy" decoding="async">
+            <img src="cabin-detail.jpg" alt="Detaljrens av midtkonsoll og dashbord i Range Rover" loading="lazy" decoding="async">
             <figcaption class="gallery-caption">Detaljer i midtkonsoll</figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="anmeldelser">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Anmeldelser</p>
+            <h2 class="section-title">Hva kundene sier.</h2>
+          </div>
+          <div class="reviews-rating">
+            <span class="review-stars" aria-hidden="true">★★★★★</span>
+            <p class="section-copy"><b>5,0 av 5</b> på Google</p>
+            <div class="reviews-nav">
+              <button class="reviews-arrow" id="revPrev" type="button" aria-label="Forrige anmeldelser">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="reviews-arrow" id="revNext" type="button" aria-label="Neste anmeldelser">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-track-wrap">
+          <div class="reviews-track" id="reviewsTrack" aria-label="Kundeanmeldelser fra Google">
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Proff og veldig godt utført jobb, utført av en hyggelig ung mann! Veldig fornøyd! Bilen har ikke vært så ren innvendig siden den var ny, og det var i 2016! Takk for veldig godt utført jobb! :-)»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">M</span>
+                <span><b>Morten</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Meget godt fornøyd»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">B</span>
+                <span><b>Brit</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Bestilte full detailing, utført rett utenfor husdøra. Nydelig resultat og genialt konsept.»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">E</span>
+                <span><b>Espen</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Meget bra jobb, service og pris.»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">J</span>
+                <span><b>Jan Inge</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Strøkent arbeid. Anbefales!»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">M</span>
+                <span><b>Marius</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Går det ekstra steget for å gi et godt resultat.»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">J</span>
+                <span><b>Julian</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Godt fornøyd med restore-pakken.»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">M</span>
+                <span><b>Mathias</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+            <figure class="review-card">
+              <div class="review-stars" aria-label="5 av 5 stjerner">★★★★★</div>
+              <blockquote class="review-text">«Profesjonell og ordentlig jobb. Anbefales!»</blockquote>
+              <figcaption class="review-meta">
+                <span class="review-avatar" aria-hidden="true">D</span>
+                <span><b>Daniel</b><small>Google-anmeldelse</small></span>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -1617,7 +1825,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>Kleive Detailing · Mobil bilpleie · Org.nr. 937 746 792</span>
+      <span>© 2026 Kleive Detailing · Org.nr. 937 746 792 MVA</span>
       <nav class="footer-links" aria-label="Bunnmeny">
         <a href="#tjenester">Tjenester</a>
         <a href="#galleri">Galleri</a>
@@ -1637,12 +1845,72 @@
     {
       "@context": "https://schema.org",
       "@type": "AutoWash",
+      "@id": "https://kleivedetailing.no/#kleivedetailing",
       "name": "Kleive Detailing",
+      "alternateName": "Kleive Detailing – mobil bilvask",
+      "url": "https://kleivedetailing.no/",
+      "image": "https://kleivedetailing.no/hero-car.jpg",
+      "logo": "https://kleivedetailing.no/logo.png",
       "telephone": "+47 483 50 490",
       "email": "kleivedetail@gmail.com",
+      "vatID": "NO937746792MVA",
+      "currenciesAccepted": "NOK",
+      "sameAs": ["https://www.instagram.com/kleivedetailing/"],
       "areaServed": ["Evenes", "Harstad", "Narvik", "Bjerkvik", "Bogen", "Skånland", "Tjeldsund"],
-      "priceRange": "790 NOK - 3290 NOK",
-      "description": "Mobil bilpleie, vask og detailing i Evenes, Harstad, Narvik og omegn."
+      "priceRange": "990 NOK - 3990 NOK",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "reviewCount": "10"
+      },
+      "description": "Mobil bilvask og bilpleie i Harstad, Narvik, Evenes og omegn. Vi kommer dit bilen står og utfører utvendig vask, interiørrens og detailing.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pakker for bilvask og bilpleie",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "priceCurrency": "NOK",
+            "price": "990",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Refresh – utvendig bilvask",
+              "description": "Skånsom håndvask, skumavfetting og felgrens, vindusrens utvendig og tørk."
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceCurrency": "NOK",
+            "price": "1990",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Revive – innvendig rens",
+              "description": "Grundig støvsuging, rens av matter, plast og detaljer, samt vindusvask innvendig."
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceCurrency": "NOK",
+            "price": "2790",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Restore – bilvask inn og ut",
+              "description": "Alt i Refresh og Revive – bilen blir ren både innvendig og utvendig."
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceCurrency": "NOK",
+            "price": "3990",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full Detail – komplett bilpleie",
+              "description": "Alt i Restore, detaljrens, pleie av skinn og tekstil, dekkvoks, lakkrens og keramisk sprayforsegling."
+            }
+          }
+        ]
+      }
     }
   </script>
 
@@ -1784,6 +2052,80 @@
       });
     }
 
+    // Anmeldelser-karusell – ruller sakte av seg selv, pauser ved interaksjon
+    (function () {
+      const track = document.getElementById("reviewsTrack");
+      if (!track) return;
+
+      const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Dupliser kortene så løkka blir sømløs
+      Array.from(track.children).forEach((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        track.appendChild(clone);
+      });
+
+      let half = 0;
+      const measure = () => { half = track.scrollWidth / 2; };
+      measure();
+      window.addEventListener("resize", measure);
+
+      let hover = false;
+      track.addEventListener("mouseenter", () => { hover = true; });
+      track.addEventListener("mouseleave", () => { hover = false; });
+
+      let pos = 0;
+      let interacting = false;
+      let idleTimer = null;
+      const bump = () => {
+        interacting = true;
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          interacting = false;
+          pos = track.scrollLeft;
+        }, 2600);
+      };
+      ["touchstart", "touchmove", "wheel", "pointerdown"].forEach((evt) => {
+        track.addEventListener(evt, bump, { passive: true });
+      });
+
+      const stepSize = () => {
+        const card = track.querySelector(".review-card");
+        return card ? card.getBoundingClientRect().width + 16 : 340;
+      };
+
+      const go = (dir) => {
+        bump();
+        if (dir < 0 && track.scrollLeft < stepSize()) track.scrollLeft += half;
+        if (dir > 0 && track.scrollLeft > half) track.scrollLeft -= half;
+        track.scrollBy({ left: dir * stepSize(), behavior: reduceMotion ? "auto" : "smooth" });
+      };
+      const revPrev = document.getElementById("revPrev");
+      const revNext = document.getElementById("revNext");
+      if (revPrev) revPrev.addEventListener("click", () => go(-1));
+      if (revNext) revNext.addEventListener("click", () => go(1));
+
+      let last = performance.now();
+      function tick(now) {
+        const dt = Math.min(now - last, 80);
+        last = now;
+        if (!reduceMotion && !hover && !interacting && half > 0) {
+          pos += dt * 0.02; // ca. 20 px per sekund
+          if (pos >= half) pos -= half;
+          track.scrollLeft = pos;
+        } else {
+          pos = track.scrollLeft;
+          if (!interacting && half > 0 && pos >= half) {
+            pos -= half;
+            track.scrollLeft = pos;
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
+
     // Scroll reveal – elementer glir inn når de kommer til syne
     (function () {
       if (!("IntersectionObserver" in window)) return;
@@ -1796,6 +2138,7 @@
         { sel: ".showcase-content", dir: "right", step: 0 },
         { sel: ".process-grid .step", dir: "up", step: 0.08 },
         { sel: ".gallery-grid .gallery-item", dir: "up", step: 0.07 },
+        { sel: ".reviews-track-wrap", dir: "up", step: 0 },
         { sel: ".contact .contact-panel:not(.form)", dir: "left", step: 0 },
         { sel: ".contact .form", dir: "right", step: 0 }
       ];
